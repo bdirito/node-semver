@@ -570,13 +570,14 @@ function patch(a, loose) {
 
 exports.prerelease = prerelease;
 function prerelease(a, loose) {
-    return new SemVer(a, loose).prerelease.join('.');
+  return new SemVer(a, loose).prerelease.join('.');
 }
 
 exports.build = build;
 function build(a, loose) {
     return new SemVer(a, loose).build.join('.');
 }
+
 
 exports.compare = compare;
 function compare(a, b, loose) {
@@ -1211,10 +1212,4 @@ function outside(version, range, hilo, loose) {
     }
   }
   return true;
-}
-
-exports.prerelease = prerelease;
-function prerelease(version, loose) {
-  var parsed = parse(version, loose);
-  return (parsed && parsed.prerelease.length) ? parsed.prerelease : null;
 }
